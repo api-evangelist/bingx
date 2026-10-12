@@ -1,0 +1,215 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/bingx-api-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.bingx.com, bingx.com, fiat.bingx.com, partner.bingx.com; verdict
+  opaque (https://api.bingx.com/api/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate tools
+  below are derived from the 172 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one that
+  exists.'
+tools:
+- name: get_open_api_account_transfer_v1_sub_account_asset_transfer_
+  operationId: get-openApi-account-transfer-v1-subAccount-asset-transferHistory
+  method: GET
+  path: /openApi/account/transfer/v1/subAccount/asset/transferHistory
+  description: Query Sub-Mother Account Transfer History
+- name: post_open_api_account_transfer_v1_sub_account_transfer_asset
+  operationId: post-openApi-account-transfer-v1-subAccount-transferAsset
+  method: POST
+  path: /openApi/account/transfer/v1/subAccount/transferAsset
+  description: Sub-Mother Account Asset Transfer Interface
+- name: get_open_api_account_v1_all_account_balance
+  operationId: get-openApi-account-v1-allAccountBalance
+  method: GET
+  path: /openApi/account/v1/allAccountBalance
+  description: Asset overview
+- name: get_open_api_account_v1_api_key_query
+  operationId: get-openApi-account-v1-apiKey-query
+  method: GET
+  path: /openApi/account/v1/apiKey/query
+  description: Query API Key Information
+- name: post_open_api_account_v1_inner_transfer_authorize_sub_accoun
+  operationId: post-openApi-account-v1-innerTransfer-authorizeSubAccount
+  method: POST
+  path: /openApi/account/v1/innerTransfer/authorizeSubAccount
+  description: Authorize Sub-Account Internal Transfer
+- name: get_open_api_account_v1_uid
+  operationId: get-openApi-account-v1-uid
+  method: GET
+  path: /openApi/account/v1/uid
+  description: Query Account UID
+- name: get_open_api_agent_v1_account_invite_account_list
+  operationId: get-openApi-agent-v1-account-inviteAccountList
+  method: GET
+  path: /openApi/agent/v1/account/inviteAccountList
+  description: Query Invited Users
+- name: get_open_api_agent_v1_account_invite_relation_check
+  operationId: get-openApi-agent-v1-account-inviteRelationCheck
+  method: GET
+  path: /openApi/agent/v1/account/inviteRelationCheck
+  description: Query agent user information
+- name: get_open_api_agent_v1_account_superior_check
+  operationId: get-openApi-agent-v1-account-superiorCheck
+  method: GET
+  path: /openApi/agent/v1/account/superiorCheck
+  description: Superior verification
+- name: get_open_api_agent_v1_asset_deposit_detail_list
+  operationId: get-openApi-agent-v1-asset-depositDetailList
+  method: GET
+  path: /openApi/agent/v1/asset/depositDetailList
+  description: Query the deposit details of invited users
+- name: get_open_api_agent_v1_asset_partner_data
+  operationId: get-openApi-agent-v1-asset-partnerData
+  method: GET
+  path: /openApi/agent/v1/asset/partnerData
+  description: Query partner information
+- name: get_open_api_agent_v1_commission_data_list_referral_code
+  operationId: get-openApi-agent-v1-commissionDataList-referralCode
+  method: GET
+  path: /openApi/agent/v1/commissionDataList/referralCode
+  description: Invitation code data
+- name: get_open_api_agent_v1_reward_third_commission_data_list
+  operationId: get-openApi-agent-v1-reward-third-commissionDataList
+  method: GET
+  path: /openApi/agent/v1/reward/third/commissionDataList
+  description: Query API transaction commission （non-invitation relationship）
+- name: get_open_api_agent_v2_reward_commission_data_list
+  operationId: get-openApi-agent-v2-reward-commissionDataList
+  method: GET
+  path: /openApi/agent/v2/reward/commissionDataList
+  description: Daily commission details
+- name: post_open_api_api_asset_v1_transfer
+  operationId: post-openApi-api-asset-v1-transfer
+  method: POST
+  path: /openApi/api/asset/v1/transfer
+  description: Asset Transfer New
+- name: get_open_api_api_asset_v1_transfer_support_coins
+  operationId: get-openApi-api-asset-v1-transfer-supportCoins
+  method: GET
+  path: /openApi/api/asset/v1/transfer/supportCoins
+  description: Query transferable currency
+- name: get_open_api_api_v3_asset_transfer
+  operationId: get-openApi-api-v3-asset-transfer
+  method: GET
+  path: /openApi/api/v3/asset/transfer
+  description: Asset transfer records
+- name: get_open_api_api_v3_asset_transfer_record
+  operationId: get-openApi-api-v3-asset-transferRecord
+  method: GET
+  path: /openApi/api/v3/asset/transferRecord
+  description: Asset transfer records new
+- name: get_open_api_api_v3_capital_deposit_hisrec
+  operationId: get-openApi-api-v3-capital-deposit-hisrec
+  method: GET
+  path: /openApi/api/v3/capital/deposit/hisrec
+  description: Deposit records
+- name: get_open_api_api_v3_capital_withdraw_history
+  operationId: get-openApi-api-v3-capital-withdraw-history
+  method: GET
+  path: /openApi/api/v3/capital/withdraw/history
+  description: Withdraw records
+- name: get_open_api_copy_trading_v1_pfutures_profit_detail
+  operationId: get-openApi-copyTrading-v1-PFutures-profitDetail
+  method: GET
+  path: /openApi/copyTrading/v1/PFutures/profitDetail
+  description: Profit Details
+- name: get_open_api_copy_trading_v1_pfutures_profit_history_summary
+  operationId: get-openApi-copyTrading-v1-PFutures-profitHistorySummarys
+  method: GET
+  path: /openApi/copyTrading/v1/PFutures/profitHistorySummarys
+  description: Profit Overview
+- name: post_open_api_copy_trading_v1_pfutures_set_commission
+  operationId: post-openApi-copyTrading-v1-PFutures-setCommission
+  method: POST
+  path: /openApi/copyTrading/v1/PFutures/setCommission
+  description: Set Commission Rate
+- name: get_open_api_copy_trading_v1_pfutures_trader_detail
+  operationId: get-openApi-copyTrading-v1-PFutures-traderDetail
+  method: GET
+  path: /openApi/copyTrading/v1/PFutures/traderDetail
+  description: Personal Trading Overview
+- name: get_open_api_copy_trading_v1_pfutures_trading_pairs
+  operationId: get-openApi-copyTrading-v1-PFutures-tradingPairs
+  method: GET
+  path: /openApi/copyTrading/v1/PFutures/tradingPairs
+  description: Trader Gets Copy Trading Pairs
+- name: get_open_api_copy_trading_v1_spot_history_order
+  operationId: get-openApi-copyTrading-v1-spot-historyOrder
+  method: GET
+  path: /openApi/copyTrading/v1/spot/historyOrder
+  description: Query Historical Orders
+- name: get_open_api_copy_trading_v1_spot_profit_detail
+  operationId: get-openApi-copyTrading-v1-spot-profitDetail
+  method: GET
+  path: /openApi/copyTrading/v1/spot/profitDetail
+  description: Profit Details
+- name: get_open_api_copy_trading_v1_spot_profit_history_summarys
+  operationId: get-openApi-copyTrading-v1-spot-profitHistorySummarys
+  method: GET
+  path: /openApi/copyTrading/v1/spot/profitHistorySummarys
+  description: Profit Summary
+- name: post_open_api_copy_trading_v1_spot_trader_sell_order
+  operationId: post-openApi-copyTrading-v1-spot-trader-sellOrder
+  method: POST
+  path: /openApi/copyTrading/v1/spot/trader/sellOrder
+  description: Trader sells spot assets based on buy order number
+- name: get_open_api_copy_trading_v1_spot_trader_detail
+  operationId: get-openApi-copyTrading-v1-spot-traderDetail
+  method: GET
+  path: /openApi/copyTrading/v1/spot/traderDetail
+  description: Personal Trading Overview
+- name: post_open_api_copy_trading_v1_swap_trace_set_tpsl
+  operationId: post-openApi-copyTrading-v1-swap-trace-setTPSL
+  method: POST
+  path: /openApi/copyTrading/v1/swap/trace/setTPSL
+  description: Traders set take profit and stop loss based on order numbers
+- name: get_open_api_cswap_v1_market_contracts
+  operationId: get-openApi-cswap-v1-market-contracts
+  method: GET
+  path: /openApi/cswap/v1/market/contracts
+  description: Contract Information
+- name: get_open_api_cswap_v1_market_depth
+  operationId: get-openApi-cswap-v1-market-depth
+  method: GET
+  path: /openApi/cswap/v1/market/depth
+  description: Query Depth Data
+- name: get_open_api_cswap_v1_market_klines
+  operationId: get-openApi-cswap-v1-market-klines
+  method: GET
+  path: /openApi/cswap/v1/market/klines
+  description: Get K-line Data
+- name: get_open_api_cswap_v1_market_open_interest
+  operationId: get-openApi-cswap-v1-market-openInterest
+  method: GET
+  path: /openApi/cswap/v1/market/openInterest
+  description: Get Swap Open Positions
+- name: get_open_api_cswap_v1_market_premium_index
+  operationId: get-openApi-cswap-v1-market-premiumIndex
+  method: GET
+  path: /openApi/cswap/v1/market/premiumIndex
+  description: Price & Current Funding Rate
+- name: get_open_api_cswap_v1_market_ticker
+  operationId: get-openApi-cswap-v1-market-ticker
+  method: GET
+  path: /openApi/cswap/v1/market/ticker
+  description: Query 24-Hour Price Change
+- name: get_open_api_cswap_v1_trade_all_fill_orders
+  operationId: get-openApi-cswap-v1-trade-allFillOrders
+  method: GET
+  path: /openApi/cswap/v1/trade/allFillOrders
+  description: Query Order Trade Detail
+- name: delete_open_api_cswap_v1_trade_all_open_orders
+  operationId: delete-openApi-cswap-v1-trade-allOpenOrders
+  method: DELETE
+  path: /openApi/cswap/v1/trade/allOpenOrders
+  description: Cancel all orders
+- name: delete_open_api_cswap_v1_trade_cancel_order
+  operationId: delete-openApi-cswap-v1-trade-cancelOrder
+  method: DELETE
+  path: /openApi/cswap/v1/trade/cancelOrder
+  description: Cancel an Order

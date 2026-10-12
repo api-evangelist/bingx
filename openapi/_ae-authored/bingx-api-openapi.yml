@@ -1,0 +1,1880 @@
+openapi: 3.0.3
+info:
+  title: BingX API
+  version: docs-v3
+  description: AE-AUTHORED, GENERATED FROM DOCUMENTATION. BingX does not publish an OpenAPI document. This contract was generated
+    by API Evangelist from the endpoint definitions embedded in the official BingX API Docs (https://bingx-api.github.io/docs-v3/).
+    It records each documented path, method, summary and rate limit only; request parameters and response schemas are not
+    modelled. Not an official BingX artifact.
+  x-generated-from: documentation
+  x-ae-authored: true
+  x-source: https://bingx-api.github.io/docs-v3/
+  x-generated: '2026-10-13'
+servers:
+- url: https://open-api.bingx.com
+security:
+- ApiKey: []
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-BX-APIKEY
+      description: API key header; private endpoints also require timestamp and an HMAC SHA256 signature query parameter.
+tags:
+- name: Account
+- name: Agent
+- name: Coin-M Futures
+- name: Copy Trading
+- name: Fund
+- name: Other
+- name: Perpetual Futures (USDT-M)
+- name: Social
+- name: Spot
+- name: Sub-Account
+- name: User Data Stream
+- name: Wallet
+- name: Wealth
+paths:
+  /openApi/account/transfer/v1/subAccount/asset/transferHistory:
+    get:
+      operationId: get-openApi-account-transfer-v1-subAccount-asset-transferHistory
+      summary: Query Sub-Mother Account Transfer History
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/transfer/v1/subAccount/transferAsset:
+    post:
+      operationId: post-openApi-account-transfer-v1-subAccount-transferAsset
+      summary: Sub-Mother Account Asset Transfer Interface
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/transfer/v1/subAccount/transferAsset/supportCoins:
+    post:
+      operationId: post-openApi-account-transfer-v1-subAccount-transferAsset-supportCoins
+      summary: Query Sub-Mother Account Transferable Amount
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/v1/allAccountBalance:
+    get:
+      operationId: get-openApi-account-v1-allAccountBalance
+      summary: Asset overview
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/v1/apiKey/query:
+    get:
+      operationId: get-openApi-account-v1-apiKey-query
+      summary: Query API Key Information
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/v1/innerTransfer/authorizeSubAccount:
+    post:
+      operationId: post-openApi-account-v1-innerTransfer-authorizeSubAccount
+      summary: Authorize Sub-Account Internal Transfer
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/account/v1/uid:
+    get:
+      operationId: get-openApi-account-v1-uid
+      summary: Query Account UID
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/account/inviteAccountList:
+    get:
+      operationId: get-openApi-agent-v1-account-inviteAccountList
+      summary: Query Invited Users
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/account/inviteRelationCheck:
+    get:
+      operationId: get-openApi-agent-v1-account-inviteRelationCheck
+      summary: Query agent user information
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/account/superiorCheck:
+    get:
+      operationId: get-openApi-agent-v1-account-superiorCheck
+      summary: Superior verification
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/asset/depositDetailList:
+    get:
+      operationId: get-openApi-agent-v1-asset-depositDetailList
+      summary: Query the deposit details of invited users
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/asset/partnerData:
+    get:
+      operationId: get-openApi-agent-v1-asset-partnerData
+      summary: Query partner information
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/commissionDataList/referralCode:
+    get:
+      operationId: get-openApi-agent-v1-commissionDataList-referralCode
+      summary: Invitation code data
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v1/reward/third/commissionDataList:
+    get:
+      operationId: get-openApi-agent-v1-reward-third-commissionDataList
+      summary: Query API transaction commission （non-invitation relationship）
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/agent/v2/reward/commissionDataList:
+    get:
+      operationId: get-openApi-agent-v2-reward-commissionDataList
+      summary: Daily commission details
+      tags:
+      - Agent
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 20/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/asset/v1/transfer:
+    post:
+      operationId: post-openApi-api-asset-v1-transfer
+      summary: Asset Transfer New
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/asset/v1/transfer/supportCoins:
+    get:
+      operationId: get-openApi-api-asset-v1-transfer-supportCoins
+      summary: Query transferable currency
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/v3/asset/transfer:
+    get:
+      operationId: get-openApi-api-v3-asset-transfer
+      summary: Asset transfer records
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 3/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/v3/asset/transferRecord:
+    get:
+      operationId: get-openApi-api-v3-asset-transferRecord
+      summary: Asset transfer records new
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/v3/capital/deposit/hisrec:
+    get:
+      operationId: get-openApi-api-v3-capital-deposit-hisrec
+      summary: Deposit records
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/api/v3/capital/withdraw/history:
+    get:
+      operationId: get-openApi-api-v3-capital-withdraw-history
+      summary: Withdraw records
+      tags:
+      - Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/copyTrading/v1/PFutures/profitDetail:
+    get:
+      operationId: get-openApi-copyTrading-v1-PFutures-profitDetail
+      summary: Profit Details
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/PFutures/profitHistorySummarys:
+    get:
+      operationId: get-openApi-copyTrading-v1-PFutures-profitHistorySummarys
+      summary: Profit Overview
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/PFutures/setCommission:
+    post:
+      operationId: post-openApi-copyTrading-v1-PFutures-setCommission
+      summary: Set Commission Rate
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/PFutures/traderDetail:
+    get:
+      operationId: get-openApi-copyTrading-v1-PFutures-traderDetail
+      summary: Personal Trading Overview
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/PFutures/tradingPairs:
+    get:
+      operationId: get-openApi-copyTrading-v1-PFutures-tradingPairs
+      summary: Trader Gets Copy Trading Pairs
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/spot/historyOrder:
+    get:
+      operationId: get-openApi-copyTrading-v1-spot-historyOrder
+      summary: Query Historical Orders
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/spot/profitDetail:
+    get:
+      operationId: get-openApi-copyTrading-v1-spot-profitDetail
+      summary: Profit Details
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/spot/profitHistorySummarys:
+    get:
+      operationId: get-openApi-copyTrading-v1-spot-profitHistorySummarys
+      summary: Profit Summary
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/spot/trader/sellOrder:
+    post:
+      operationId: post-openApi-copyTrading-v1-spot-trader-sellOrder
+      summary: Trader sells spot assets based on buy order number
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/copyTrading/v1/spot/traderDetail:
+    get:
+      operationId: get-openApi-copyTrading-v1-spot-traderDetail
+      summary: Personal Trading Overview
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/copyTrading/v1/swap/trace/setTPSL:
+    post:
+      operationId: post-openApi-copyTrading-v1-swap-trace-setTPSL
+      summary: Traders set take profit and stop loss based on order numbers
+      tags:
+      - Copy Trading
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/market/contracts:
+    get:
+      operationId: get-openApi-cswap-v1-market-contracts
+      summary: Contract Information
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/market/depth:
+    get:
+      operationId: get-openApi-cswap-v1-market-depth
+      summary: Query Depth Data
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/market/klines:
+    get:
+      operationId: get-openApi-cswap-v1-market-klines
+      summary: Get K-line Data
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/market/openInterest:
+    get:
+      operationId: get-openApi-cswap-v1-market-openInterest
+      summary: Get Swap Open Positions
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/market/premiumIndex:
+    get:
+      operationId: get-openApi-cswap-v1-market-premiumIndex
+      summary: Price & Current Funding Rate
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/market/ticker:
+    get:
+      operationId: get-openApi-cswap-v1-market-ticker
+      summary: Query 24-Hour Price Change
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/cswap/v1/trade/allFillOrders:
+    get:
+      operationId: get-openApi-cswap-v1-trade-allFillOrders
+      summary: Query Order Trade Detail
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/allOpenOrders:
+    delete:
+      operationId: delete-openApi-cswap-v1-trade-allOpenOrders
+      summary: Cancel all orders
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/cancelOrder:
+    delete:
+      operationId: delete-openApi-cswap-v1-trade-cancelOrder
+      summary: Cancel an Order
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/closeAllPositions:
+    post:
+      operationId: post-openApi-cswap-v1-trade-closeAllPositions
+      summary: Close all positions in bulk
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/forceOrders:
+    get:
+      operationId: get-openApi-cswap-v1-trade-forceOrders
+      summary: Query force orders
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/leverage:
+    get:
+      operationId: get-openApi-cswap-v1-trade-leverage
+      summary: Query Leverage
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+    post:
+      operationId: post-openApi-cswap-v1-trade-leverage
+      summary: Modify Leverage
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/marginType:
+    post:
+      operationId: post-openApi-cswap-v1-trade-marginType
+      summary: Set Margin Type
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+    get:
+      operationId: get-openApi-cswap-v1-trade-marginType
+      summary: Query Margin Type
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/openOrders:
+    get:
+      operationId: get-openApi-cswap-v1-trade-openOrders
+      summary: Query all current pending orders
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/orderDetail:
+    get:
+      operationId: get-openApi-cswap-v1-trade-orderDetail
+      summary: Query Order
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/orderHistory:
+    get:
+      operationId: get-openApi-cswap-v1-trade-orderHistory
+      summary: User's History Orders
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/trade/positionMargin:
+    post:
+      operationId: post-openApi-cswap-v1-trade-positionMargin
+      summary: Adjust Isolated Margin
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/user/balance:
+    get:
+      operationId: get-openApi-cswap-v1-user-balance
+      summary: Query Account Assets
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/user/commissionRate:
+    get:
+      operationId: get-openApi-cswap-v1-user-commissionRate
+      summary: Query Trade Commission Rate
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v1/user/positions:
+    get:
+      operationId: get-openApi-cswap-v1-user-positions
+      summary: Query warehouse
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/cswap/v2/trade/order:
+    post:
+      operationId: post-openApi-cswap-v2-trade-order
+      summary: Trade order
+      tags:
+      - Coin-M Futures
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/fund/v1/account/balance:
+    get:
+      operationId: get-openApi-fund-v1-account-balance
+      summary: Query Fund Account Assets
+      tags:
+      - Fund
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/social/v1/swap/signal:
+    post:
+      operationId: post-openApi-social-v1-swap-signal
+      summary: Create Signal
+      tags:
+      - Social
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 1/second, 100/day
+  /openApi/spot/v1/account/balance:
+    get:
+      operationId: get-openApi-spot-v1-account-balance
+      summary: Query Assets
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/common/symbols:
+    get:
+      operationId: get-openApi-spot-v1-common-symbols
+      summary: Spot trading symbols
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v1/market/depth:
+    get:
+      operationId: get-openApi-spot-v1-market-depth
+      summary: Order Book
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v1/oco/cancel:
+    post:
+      operationId: post-openApi-spot-v1-oco-cancel
+      summary: Cancel an OCO Order List
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/oco/historyOrderList:
+    get:
+      operationId: get-openApi-spot-v1-oco-historyOrderList
+      summary: Query OCO Historical Order List
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/oco/openOrderList:
+    get:
+      operationId: get-openApi-spot-v1-oco-openOrderList
+      summary: Query All Open OCO Orders
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/oco/order:
+    post:
+      operationId: post-openApi-spot-v1-oco-order
+      summary: Create an OCO Order
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/oco/orderList:
+    get:
+      operationId: get-openApi-spot-v1-oco-orderList
+      summary: Query an OCO Order List
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/trade/batchOrders:
+    post:
+      operationId: post-openApi-spot-v1-trade-batchOrders
+      summary: Place multiple orders
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/cancel:
+    post:
+      operationId: post-openApi-spot-v1-trade-cancel
+      summary: Cancel Order
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/cancelAllAfter:
+    post:
+      operationId: post-openApi-spot-v1-trade-cancelAllAfter
+      summary: Cancel All After
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 1/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/trade/cancelOpenOrders:
+    post:
+      operationId: post-openApi-spot-v1-trade-cancelOpenOrders
+      summary: Cancel all Open Orders on a Symbol
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/cancelOrders:
+    post:
+      operationId: post-openApi-spot-v1-trade-cancelOrders
+      summary: Cancel multiple orders
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/historyOrders:
+    get:
+      operationId: get-openApi-spot-v1-trade-historyOrders
+      summary: Query Order history
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/trade/myTrades:
+    get:
+      operationId: get-openApi-spot-v1-trade-myTrades
+      summary: Query transaction details
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/trade/openOrders:
+    get:
+      operationId: get-openApi-spot-v1-trade-openOrders
+      summary: Current Open Orders
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/trade/order:
+    post:
+      operationId: post-openApi-spot-v1-trade-order
+      summary: Place order
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/order/cancelReplace:
+    post:
+      operationId: post-openApi-spot-v1-trade-order-cancelReplace
+      summary: Cancel an Existing Order and Send a New Order
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/spot/v1/trade/query:
+    get:
+      operationId: get-openApi-spot-v1-trade-query
+      summary: Query Order details
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v1/user/commissionRate:
+    get:
+      operationId: get-openApi-spot-v1-user-commissionRate
+      summary: Query Trading Commission Rate
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/spot/v2/quote/bookTicker:
+    get:
+      operationId: get-openApi-spot-v2-quote-bookTicker
+      summary: Symbol Order Book Ticker
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/depth:
+    get:
+      operationId: get-openApi-spot-v2-quote-depth
+      summary: Order Book aggregation
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/historicalKlines:
+    get:
+      operationId: get-openApi-spot-v2-quote-historicalKlines
+      summary: Historical K-line
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/historicalTrades:
+    get:
+      operationId: get-openApi-spot-v2-quote-historicalTrades
+      summary: Historical Trades
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/klines:
+    get:
+      operationId: get-openApi-spot-v2-quote-klines
+      summary: Kline/Candlestick Data
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/price:
+    get:
+      operationId: get-openApi-spot-v2-quote-price
+      summary: Symbol Price Ticker
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/ticker:
+    get:
+      operationId: get-openApi-spot-v2-quote-ticker
+      summary: 24hr Ticker Price Change Statistics
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/spot/v2/quote/trades:
+    get:
+      operationId: get-openApi-spot-v2-quote-trades
+      summary: Recent Trades List
+      tags:
+      - Spot
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/subAccount/v1/allAccountBalance:
+    get:
+      operationId: get-openApi-subAccount-v1-allAccountBalance
+      summary: Batch Query Sub-Account Asset Overview
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/apiKey/create:
+    post:
+      operationId: post-openApi-subAccount-v1-apiKey-create
+      summary: Create Sub-account API Key
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/apiKey/del:
+    post:
+      operationId: post-openApi-subAccount-v1-apiKey-del
+      summary: Delete Sub-Account API Key
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/apiKey/edit:
+    post:
+      operationId: post-openApi-subAccount-v1-apiKey-edit
+      summary: Edit Sub-Account API Key
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/assets:
+    get:
+      operationId: get-openApi-subAccount-v1-assets
+      summary: Query Sub-account Asset Account
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/create:
+    post:
+      operationId: post-openApi-subAccount-v1-create
+      summary: Create Sub-account
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/list:
+    get:
+      operationId: get-openApi-subAccount-v1-list
+      summary: Query Sub-account List
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/subAccount/v1/updateStatus:
+    post:
+      operationId: post-openApi-subAccount-v1-updateStatus
+      summary: Freeze/Unfreeze Sub-Account
+      tags:
+      - Sub-Account
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/maintMarginRatio:
+    get:
+      operationId: get-openApi-swap-v1-maintMarginRatio
+      summary: Position and Maintenance Margin Ratio
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/market/historicalTrades:
+    get:
+      operationId: get-openApi-swap-v1-market-historicalTrades
+      summary: Query historical transaction orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v1/market/markPriceKlines:
+    get:
+      operationId: get-openApi-swap-v1-market-markPriceKlines
+      summary: Mark Price Kline/Candlestick Data
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v1/positionMargin/history:
+    get:
+      operationId: get-openApi-swap-v1-positionMargin-history
+      summary: Isolated Margin Change History
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/positionSide/dual:
+    get:
+      operationId: get-openApi-swap-v1-positionSide-dual
+      summary: Query position mode
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+    post:
+      operationId: post-openApi-swap-v1-positionSide-dual
+      summary: Set Position Mode
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 4/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/ticker/price:
+    get:
+      operationId: get-openApi-swap-v1-ticker-price
+      summary: Symbol Price Ticker
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v1/trade/amend:
+    post:
+      operationId: post-openApi-swap-v1-trade-amend
+      summary: Modify Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+  /openApi/swap/v1/trade/assetMode:
+    post:
+      operationId: post-openApi-swap-v1-trade-assetMode
+      summary: Switch Multi-Assets Mode
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+    get:
+      operationId: get-openApi-swap-v1-trade-assetMode
+      summary: Query Multi-Assets Mode
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/autoAddMargin:
+    post:
+      operationId: post-openApi-swap-v1-trade-autoAddMargin
+      summary: Hedge mode Position - Automatic Margin Addition
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/batchCancelReplace:
+    post:
+      operationId: post-openApi-swap-v1-trade-batchCancelReplace
+      summary: Cancel orders in batches and place orders in batches
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/cancelReplace:
+    post:
+      operationId: post-openApi-swap-v1-trade-cancelReplace
+      summary: Cancel an Existing Order and Send a New Orde
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/closePosition:
+    post:
+      operationId: post-openApi-swap-v1-trade-closePosition
+      summary: Close position by position ID
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/fullOrder:
+    get:
+      operationId: get-openApi-swap-v1-trade-fullOrder
+      summary: All Orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/multiAssetsRules:
+    get:
+      operationId: get-openApi-swap-v1-trade-multiAssetsRules
+      summary: Query Multi-Assets Rules
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/trade/reverse:
+    post:
+      operationId: post-openApi-swap-v1-trade-reverse
+      summary: One-Click Reverse Position
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/tradingRules:
+    get:
+      operationId: get-openApi-swap-v1-tradingRules
+      summary: Trading Rules
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+  /openApi/swap/v1/twap/cancelOrder:
+    post:
+      operationId: post-openApi-swap-v1-twap-cancelOrder
+      summary: Cancel TWAP Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/twap/historyOrders:
+    get:
+      operationId: get-openApi-swap-v1-twap-historyOrders
+      summary: Query TWAP Historical Orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/twap/openOrders:
+    get:
+      operationId: get-openApi-swap-v1-twap-openOrders
+      summary: Query TWAP Entrusted Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/twap/order:
+    post:
+      operationId: post-openApi-swap-v1-twap-order
+      summary: Place TWAP Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/twap/orderDetail:
+    get:
+      operationId: get-openApi-swap-v1-twap-orderDetail
+      summary: TWAP Order Details
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v1/user/marginAssets:
+    get:
+      operationId: get-openApi-swap-v1-user-marginAssets
+      summary: Query Multi-Assets Margin
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/quote/bookTicker:
+    get:
+      operationId: get-openApi-swap-v2-quote-bookTicker
+      summary: Symbol Order Book Ticker
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/contracts:
+    get:
+      operationId: get-openApi-swap-v2-quote-contracts
+      summary: USDT-M Perp Futures symbols
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+  /openApi/swap/v2/quote/depth:
+    get:
+      operationId: get-openApi-swap-v2-quote-depth
+      summary: Order Book
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/fundingRate:
+    get:
+      operationId: get-openApi-swap-v2-quote-fundingRate
+      summary: Get Funding Rate History
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/openInterest:
+    get:
+      operationId: get-openApi-swap-v2-quote-openInterest
+      summary: Open Interest Statistics
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/premiumIndex:
+    get:
+      operationId: get-openApi-swap-v2-quote-premiumIndex
+      summary: Mark Price and Funding Rate
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/ticker:
+    get:
+      operationId: get-openApi-swap-v2-quote-ticker
+      summary: 24hr Ticker Price Change Statistics
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/quote/trades:
+    get:
+      operationId: get-openApi-swap-v2-quote-trades
+      summary: Recent Trades List
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v2/trade/allFillOrders:
+    get:
+      operationId: get-openApi-swap-v2-trade-allFillOrders
+      summary: Query historical transaction orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/allOpenOrders:
+    delete:
+      operationId: delete-openApi-swap-v2-trade-allOpenOrders
+      summary: Cancel All Open Orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/allOrders:
+    get:
+      operationId: get-openApi-swap-v2-trade-allOrders
+      summary: Query Order history
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/swap/v2/trade/batchOrders:
+    delete:
+      operationId: delete-openApi-swap-v2-trade-batchOrders
+      summary: Cancel multiple orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+    post:
+      operationId: post-openApi-swap-v2-trade-batchOrders
+      summary: Place multiple orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/swap/v2/trade/cancelAllAfter:
+    post:
+      operationId: post-openApi-swap-v2-trade-cancelAllAfter
+      summary: Cancel All After
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 1/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/closeAllPositions:
+    post:
+      operationId: post-openApi-swap-v2-trade-closeAllPositions
+      summary: Close All Positions
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/fillHistory:
+    get:
+      operationId: get-openApi-swap-v2-trade-fillHistory
+      summary: Query historical transaction details
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/forceOrders:
+    get:
+      operationId: get-openApi-swap-v2-trade-forceOrders
+      summary: User's Force Orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/getVst:
+    post:
+      operationId: post-openApi-swap-v2-trade-getVst
+      summary: Apply VST
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/leverage:
+    post:
+      operationId: post-openApi-swap-v2-trade-leverage
+      summary: Set Leverage
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+    get:
+      operationId: get-openApi-swap-v2-trade-leverage
+      summary: Query Leverage and Available Positions
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/marginType:
+    post:
+      operationId: post-openApi-swap-v2-trade-marginType
+      summary: Change Margin Type
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+    get:
+      operationId: get-openApi-swap-v2-trade-marginType
+      summary: Query Margin Type
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/openOrder:
+    get:
+      operationId: get-openApi-swap-v2-trade-openOrder
+      summary: Query pending order status
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/openOrders:
+    get:
+      operationId: get-openApi-swap-v2-trade-openOrders
+      summary: Current All Open Orders
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/swap/v2/trade/order:
+    post:
+      operationId: post-openApi-swap-v2-trade-order
+      summary: Place order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '3'
+    get:
+      operationId: get-openApi-swap-v2-trade-order
+      summary: Query Order details
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 30/second
+      x-ip-rate-limit-weight: '2'
+    delete:
+      operationId: delete-openApi-swap-v2-trade-order
+      summary: Cancel Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/swap/v2/trade/order/test:
+    post:
+      operationId: post-openApi-swap-v2-trade-order-test
+      summary: Test Order
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/positionHistory:
+    get:
+      operationId: get-openApi-swap-v2-trade-positionHistory
+      summary: Query Position History
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/trade/positionMargin:
+    post:
+      operationId: post-openApi-swap-v2-trade-positionMargin
+      summary: Modify Isolated Position Margin
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/user/commissionRate:
+    get:
+      operationId: get-openApi-swap-v2-user-commissionRate
+      summary: Query Trading Commission Rate
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/user/income:
+    get:
+      operationId: get-openApi-swap-v2-user-income
+      summary: Get Account Profit and Loss Fund Flow
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/user/income/export:
+    get:
+      operationId: get-openApi-swap-v2-user-income-export
+      summary: Export fund flow
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/swap/v2/user/positions:
+    get:
+      operationId: get-openApi-swap-v2-user-positions
+      summary: Query position data
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/swap/v3/quote/klines:
+    get:
+      operationId: get-openApi-swap-v3-quote-klines
+      summary: Kline/Candlestick Data
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-ip-rate-limit-weight: '1'
+  /openApi/swap/v3/user/balance:
+    get:
+      operationId: get-openApi-swap-v3-user-balance
+      summary: Query account data
+      tags:
+      - Perpetual Futures (USDT-M)
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '3'
+  /openApi/user/auth/userDataStream:
+    delete:
+      operationId: delete-openApi-user-auth-userDataStream
+      summary: Close Listen Key
+      tags:
+      - User Data Stream
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+    put:
+      operationId: put-openApi-user-auth-userDataStream
+      summary: Extend Listen Key Validity
+      tags:
+      - User Data Stream
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+    post:
+      operationId: post-openApi-user-auth-userDataStream
+      summary: Generate Listen Key
+      tags:
+      - User Data Stream
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/v1/account/apiPermissions:
+    get:
+      operationId: get-openApi-v1-account-apiPermissions
+      summary: Query API KEY Permissions
+      tags:
+      - Other
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/config/getall:
+    get:
+      operationId: get-openApi-wallets-v1-capital-config-getall
+      summary: Query currency deposit and withdrawal data
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/deposit/address:
+    get:
+      operationId: get-openApi-wallets-v1-capital-deposit-address
+      summary: Main Account Deposit Address
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 1/second
+      x-ip-rate-limit-weight: '1'
+  /openApi/wallets/v1/capital/deposit/querySubAddress:
+    get:
+      operationId: get-openApi-wallets-v1-capital-deposit-querySubAddress
+      summary: Query Sub-account Deposit Address
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/deposit/riskRecords:
+    get:
+      operationId: get-openApi-wallets-v1-capital-deposit-riskRecords
+      summary: Deposit risk control records
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/deposit/subHisrec:
+    get:
+      operationId: get-openApi-wallets-v1-capital-deposit-subHisrec
+      summary: Get Sub-account Deposit Records
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/innerTransfer/apply:
+    post:
+      operationId: post-openApi-wallets-v1-capital-innerTransfer-apply
+      summary: Main Accoun internal transfer
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/innerTransfer/records:
+    get:
+      operationId: get-openApi-wallets-v1-capital-innerTransfer-records
+      summary: Main account internal transfer records
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/subAccount/deposit/address:
+    get:
+      operationId: get-openApi-wallets-v1-capital-subAccount-deposit-address
+      summary: Query Sub-account Deposit Address
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/subAccount/innerTransfer/records:
+    get:
+      operationId: get-openApi-wallets-v1-capital-subAccount-innerTransfer-records
+      summary: Query Sub-account Internal Transfer Records
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/subAccountInnerTransfer/apply:
+    post:
+      operationId: post-openApi-wallets-v1-capital-subAccountInnerTransfer-apply
+      summary: Sub-account Internal Transfer
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 5/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wallets/v1/capital/withdraw/apply:
+    post:
+      operationId: post-openApi-wallets-v1-capital-withdraw-apply
+      summary: Withdraw
+      tags:
+      - Wallet
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 2/second
+      x-ip-rate-limit-weight: '2'
+  /openApi/wealth/v1/product/dual-currency/invest-asset-list:
+    post:
+      operationId: post-openApi-wealth-v1-product-dual-currency-invest-asset-list
+      summary: Dual-Currency Product List
+      tags:
+      - Wealth
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/wealth/v1/product/dual-currency/order:
+    post:
+      operationId: post-openApi-wealth-v1-product-dual-currency-order
+      summary: Dual-Currency Place Order
+      tags:
+      - Wealth
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/wealth/v1/product/dual-currency/order-records:
+    get:
+      operationId: get-openApi-wealth-v1-product-dual-currency-order-records
+      summary: Dual-Currency Order Records
+      tags:
+      - Wealth
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/wealth/v1/product/dual-currency/position:
+    get:
+      operationId: get-openApi-wealth-v1-product-dual-currency-position
+      summary: Dual-Currency Position Query
+      tags:
+      - Wealth
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s
+  /openApi/wealth/v1/product/dual-currency/pre-order:
+    get:
+      operationId: get-openApi-wealth-v1-product-dual-currency-pre-order
+      summary: Dual-Currency Pre-Order Quote
+      tags:
+      - Wealth
+      responses:
+        '200':
+          description: Successful response. BingX wraps results as {code, msg, data}; code 0 means success.
+      x-rate-limit: 10s/s

@@ -1,7 +1,9 @@
 aid: bingx
 name: BingX
-description: 'BingX is a company surfaced via the API Evangelist harvest backlog (source: market-gap)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://static-app.bb-os.com/fe-common/assets/share_card.png?v=20240123
+description: BingX is a cryptocurrency exchange offering spot, perpetual futures (USDT-M and Coin-M), copy trading and wealth
+  products. It exposes a public REST trading API at open-api.bingx.com and WebSocket market data streams, authenticated with
+  an API key header and HMAC SHA256 request signatures.
 url: https://raw.githubusercontent.com/api-evangelist/bingx/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap
@@ -12,12 +14,60 @@ created: '2026-10-13'
 modified: '2026-10-13'
 tags:
 - Company
-apis: []
+- Cryptocurrency
+- Exchange
+- Trading
+- Financial Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Spectral
+  url: rules/bingx-rules.yml
+- type: Conformance
+  url: conformance/bingx-conformance.yml
+- type: WellKnown
+  url: well-known/bingx-well-known.yml
+- type: Hosts
+  url: hosts/bingx-hosts.yml
+- type: Vendors
+  url: vendors/bingx-vendors.yml
+- type: DomainSecurity
+  url: security/bingx-domain-security.yml
 - type: Website
   url: https://bingx.com
+- type: Documentation
+  url: https://bingx-api.github.io/docs-v3/
+- type: APIReference
+  url: https://bingx-api.github.io/docs-v3/
+- type: Blog
+  url: https://bingx.com/en/blog
+- type: Newsroom
+  url: https://bingx.com/en/news
+- type: Login
+  url: https://bingx.com/en/accounts/login
+- type: SignUp
+  url: https://bingx.com/en/register
+- type: PrivacyPolicy
+  url: https://bingx.com/en/support/articles/360034388413
+- type: Support
+  url: https://bingx.com/en/help
+apis:
+- aid: bingx:bingx-api
+  name: BingX API
+  description: REST API for BingX spot, perpetual futures, coin-margined futures, wallet, sub-account, copy trading and wealth
+    operations. No official OpenAPI is published; the linked contract is AE-authored from the documentation.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Cryptocurrency
+  - Trading
+  - Exchange
+  properties:
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+  - type: OpenAPI
+    url: openapi/_ae-authored/bingx-api-openapi.yml
+    x-provenance: ae-authored-from-docs

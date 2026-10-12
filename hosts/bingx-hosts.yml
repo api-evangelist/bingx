@@ -1,0 +1,88 @@
+generated: '2026-10-13'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 6
+  own: 5
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - docs
+  - other
+  - partner
+  - website
+hosts:
+- host: api.bingx.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: bingx.com
+  role: api
+  relation: own
+- host: bingx-api.github.io
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - Documentation
+  - APIReference
+  serves:
+  - docs
+  registrable_domain: github.io
+  role: docs
+  relation: platform
+- host: bingx.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Website
+  - Blog
+  - Newsroom
+  - Login
+  - SignUp
+  - PrivacyPolicy
+  - Support
+  serves: []
+  registrable_domain: bingx.com
+  role: website
+  relation: own
+- host: fiat.bingx.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: bingx.com
+  role: other
+  relation: own
+- host: open-api.bingx.com
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: bingx.com
+  role: other
+  relation: own
+- host: partner.bingx.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  title: 'BingX - A Leading Cryptocurrency Exchange｜for BTC ETH｜Offers Spot, Derivatives, '
+  status: 200
+  registrable_domain: bingx.com
+  role: partner
+  relation: own
