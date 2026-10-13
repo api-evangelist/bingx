@@ -7,7 +7,7 @@ description: BingX is a cryptocurrency exchange offering spot, perpetual futures
 url: https://raw.githubusercontent.com/api-evangelist/bingx/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap
-x-tier: stub
+x-tier: profiled
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-10-13'
@@ -24,6 +24,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Pricing
+  url: https://bingx.com/en/price
 - type: Spectral
   url: rules/bingx-rules.yml
 - type: Conformance
@@ -71,3 +73,7 @@ apis:
   - type: OpenAPI
     url: openapi/_ae-authored/bingx-api-openapi.yml
     x-provenance: ae-authored-from-docs
+x-enrichment:
+  status: enriched
+  pass: local-v5
+  date: '2026-10-13'

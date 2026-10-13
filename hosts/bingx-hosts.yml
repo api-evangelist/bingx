@@ -26,11 +26,15 @@ hosts:
   found_by:
   - pointer
   - apis[]
+  - vendor-detect
   types:
   - Documentation
   - APIReference
   serves:
   - docs
+  - cdn
+  - hosting
+  vendor: fastly
   registrable_domain: github.io
   role: docs
   relation: platform
@@ -40,6 +44,7 @@ hosts:
   - probed
   - contract-discovery
   - well-known
+  - vendor-detect
   types:
   - Website
   - Blog
@@ -48,7 +53,9 @@ hosts:
   - SignUp
   - PrivacyPolicy
   - Support
-  serves: []
+  serves:
+  - cdn
+  vendor: cloudfront
   registrable_domain: bingx.com
   role: website
   relation: own

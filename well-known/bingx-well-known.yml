@@ -1,11 +1,12 @@
 generated: '2026-10-13'
 method: probed
 generator: harvest-well-known.py
-source: Live GET of the named /.well-known/ path list on every host the record knows; every row is a request that was issued.
+source: Live GET of the named /.well-known/ path list on every host the record knows; every row is a request that
+  was issued.
 summary:
   hosts_probed: 5
   paths_probed: 55
-  documents_served: 0
+  documents_served: 2
 hosts:
 - host: open-api.bingx.com
   control:
@@ -47,11 +48,19 @@ hosts:
   - path: /.well-known/ucp.json
     status: 200
     standard: UCP
-    note: 200 but the body is a JSON "api is not exist" error; the negative control also answers 200 (catch-all). Not a document.
+    content_type: application/json
+    file: bingx-open-api-ucp.json
+    note: 'live on the provider''s host; the document names github.io: the hosting platform serves it'
+    served_by_platform:
+    - github.io
   - path: /.well-known/acp.json
     status: 200
     standard: ACP
-    note: 200 but the body is a JSON "api is not exist" error; the negative control also answers 200 (catch-all). Not a document.
+    content_type: application/json
+    file: bingx-open-api-acp.json
+    note: 'live on the provider''s host; the document names github.io: the hosting platform serves it'
+    served_by_platform:
+    - github.io
   - path: /.well-known/mcp/server-card.json
     status: 200
     standard: MCP server card
