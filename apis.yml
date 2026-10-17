@@ -57,22 +57,163 @@ common:
 - type: Support
   url: https://bingx.com/en/help
 apis:
-- aid: bingx:bingx-api
-  name: BingX API
-  description: REST API for BingX spot, perpetual futures, coin-margined futures, wallet, sub-account, copy trading and wealth
-    operations. No official OpenAPI is published; the linked contract is AE-authored from the documentation.
+- aid: bingx:bingx-account-api
+  name: BingX Account API
+  description: The Account API from BingX — 13 operation(s) for account.
   humanURL: https://bingx-api.github.io/docs-v3/
   baseURL: https://open-api.bingx.com
   tags:
-  - Cryptocurrency
-  - Trading
-  - Exchange
+  - Account
   properties:
+  - type: OpenAPI
+    url: openapi/bingx-account-api-openapi.yml
   - type: Documentation
     url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-agent-api
+  name: BingX Agent API
+  description: The Agent API from BingX — 8 operation(s) for agent.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Agent
+  properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/bingx-api-openapi.yml
-    x-provenance: ae-authored-from-docs
+    url: openapi/bingx-agent-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-coin-m-futures-api
+  name: BingX Coin-M Futures API
+  description: The Coin-M Futures API from BingX — 21 operation(s) for coin-m futures.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Coin-M Futures
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-coin-m-futures-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-copy-trading-api
+  name: BingX Copy Trading API
+  description: The Copy Trading API from BingX — 11 operation(s) for copy trading.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Copy Trading
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-copy-trading-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-fund-api
+  name: BingX Fund API
+  description: The Fund API from BingX — 1 operation(s) for fund.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Fund
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-fund-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-other-api
+  name: BingX Other API
+  description: The Other API from BingX — 1 operation(s) for other.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Other
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-other-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-perpetual-futures-usdt-m-api
+  name: BingX Perpetual Futures (USDT-M) API
+  description: >-
+    The Perpetual Futures (USDT-M) API from BingX — 53 operation(s) for perpetual futures (usdt-m).
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Perpetual Futures (USDT-M)
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-perpetual-futures-usdt-m-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-social-api
+  name: BingX Social API
+  description: The Social API from BingX — 1 operation(s) for social.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Social
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-social-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-spot-api
+  name: BingX Spot API
+  description: The Spot API from BingX — 28 operation(s) for spot.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Spot
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-spot-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-sub-account-api
+  name: BingX Sub Account API
+  description: The Sub-Account API from BingX — 8 operation(s) for sub-account.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Sub-Account
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-sub-account-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-user-data-stream-api
+  name: BingX User Data Stream API
+  description: The User Data Stream API from BingX — 1 operation(s) for user data stream.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - User Data Stream
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-user-data-stream-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-wallet-api
+  name: BingX Wallet API
+  description: The Wallet API from BingX — 11 operation(s) for wallet.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Wallet
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-wallet-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
+- aid: bingx:bingx-wealth-api
+  name: BingX Wealth API
+  description: The Wealth API from BingX — 5 operation(s) for wealth.
+  humanURL: https://bingx-api.github.io/docs-v3/
+  baseURL: https://open-api.bingx.com
+  tags:
+  - Wealth
+  properties:
+  - type: OpenAPI
+    url: openapi/bingx-wealth-api-openapi.yml
+  - type: Documentation
+    url: https://bingx-api.github.io/docs-v3/
 x-enrichment:
   status: enriched
   pass: local-v5

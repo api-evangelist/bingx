@@ -1,0 +1,30 @@
+{
+  "provider": "bingx",
+  "sources": [
+    "_ae-authored/bingx-api-openapi.yml"
+  ],
+  "outputs": [
+    "bingx-account-api-openapi.yml",
+    "bingx-agent-api-openapi.yml",
+    "bingx-coin-m-futures-api-openapi.yml",
+    "bingx-copy-trading-api-openapi.yml",
+    "bingx-fund-api-openapi.yml",
+    "bingx-other-api-openapi.yml",
+    "bingx-perpetual-futures-usdt-m-api-openapi.yml",
+    "bingx-social-api-openapi.yml",
+    "bingx-spot-api-openapi.yml",
+    "bingx-sub-account-api-openapi.yml",
+    "bingx-user-data-stream-api-openapi.yml",
+    "bingx-wallet-api-openapi.yml",
+    "bingx-wealth-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bingx-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+13 apis, 13 total)"
+  ],
+  "skipped": []
+}
