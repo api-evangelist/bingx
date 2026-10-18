@@ -1,4 +1,4 @@
-generated: '2026-10-13'
+generated: '2026-10-18'
 method: probed
 generator: harvest-well-known.py
 source: Live GET of the named /.well-known/ path list on every host the record knows; every row is a request that
@@ -6,7 +6,7 @@ source: Live GET of the named /.well-known/ path list on every host the record k
 summary:
   hosts_probed: 5
   paths_probed: 55
-  documents_served: 2
+  documents_served: 0
 hosts:
 - host: open-api.bingx.com
   control:
@@ -20,51 +20,43 @@ hosts:
   - path: /.well-known/openid-configuration
     status: 200
     standard: OpenID Connect Discovery 1.0
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/oauth-authorization-server
     status: 200
     standard: RFC 8414
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/oauth-protected-resource
     status: 200
     standard: RFC 9728
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/api-catalog
     status: 200
     standard: RFC 9727
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/apis.json
     status: 200
     standard: APIs.json
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/ai-plugin.json
     status: 200
     standard: OpenAI plugin manifest
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/aauth-resource.json
     status: 200
     standard: AAuth
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/ucp.json
     status: 200
     standard: UCP
-    content_type: application/json
-    file: bingx-open-api-ucp.json
-    note: 'live on the provider''s host; the document names github.io: the hosting platform serves it'
-    served_by_platform:
-    - github.io
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/acp.json
     status: 200
     standard: ACP
-    content_type: application/json
-    file: bingx-open-api-acp.json
-    note: 'live on the provider''s host; the document names github.io: the hosting platform serves it'
-    served_by_platform:
-    - github.io
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
   - path: /.well-known/mcp/server-card.json
     status: 200
     standard: MCP server card
-    note: 200 but the body is not the document this path names
+    note: '200 matching the host''s soft-200 control response or an error body: not a document'
 - host: bingx.com
   control:
     path: /.well-known/apis-io-negative-control-7f3ab91c.json
@@ -186,7 +178,7 @@ hosts:
   control:
     path: /.well-known/apis-io-negative-control-7f3ab91c.json
     status: 200
-    bytes: 70794
+    bytes: 73423
   documents:
   - path: /.well-known/security.txt
     status: 403
