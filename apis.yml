@@ -75,6 +75,8 @@ apis:
   humanURL: https://bingx-api.github.io/docs-v3/
   baseURL: https://open-api.bingx.com
   tags:
+  - Agents
+  tags_raw:
   - Agent
   properties:
   - type: OpenAPI
@@ -122,7 +124,8 @@ apis:
   description: The Other API from BingX — 1 operation(s) for other.
   humanURL: https://bingx-api.github.io/docs-v3/
   baseURL: https://open-api.bingx.com
-  tags:
+  tags: []
+  tags_raw:
   - Other
   properties:
   - type: OpenAPI
@@ -172,6 +175,8 @@ apis:
   humanURL: https://bingx-api.github.io/docs-v3/
   baseURL: https://open-api.bingx.com
   tags:
+  - Sub Account
+  tags_raw:
   - Sub-Account
   properties:
   - type: OpenAPI
@@ -196,6 +201,8 @@ apis:
   humanURL: https://bingx-api.github.io/docs-v3/
   baseURL: https://open-api.bingx.com
   tags:
+  - Wallets
+  tags_raw:
   - Wallet
   properties:
   - type: OpenAPI
